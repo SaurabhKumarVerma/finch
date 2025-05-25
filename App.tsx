@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { DarkThemeMode, LightThemeMode } from './src/utils/darkModeConfig';
-import DashboardScreen from './src/screen/DashboardScreen/DashboardScreen';
+import Main from './src/Main';
 SplashScreen.preventAutoHideAsync();
 
 SplashScreen.setOptions({
@@ -14,10 +14,10 @@ SplashScreen.setOptions({
 });
 
 export default function App() {
-   const [appIsReady, setAppIsReady] = useState(false);
-   const scheme = useColorScheme();
+  const [appIsReady, setAppIsReady] = useState(false);
+  const scheme = useColorScheme();
 
-   useEffect(() => {
+  useEffect(() => {
     async function prepare() {
       try {
         await new Promise(resolve => setTimeout(resolve, 2000));
@@ -31,7 +31,7 @@ export default function App() {
     prepare();
   }, []);
 
-   const onLayoutRootView = useCallback(() => {
+  const onLayoutRootView = useCallback(() => {
     if (appIsReady) {
       SplashScreen.hide();
     }
@@ -45,8 +45,8 @@ export default function App() {
   return (
     <SafeAreaProvider style={styles.container} onLayout={onLayoutRootView}>
       <NavigationContainer theme={scheme === 'dark' ? DarkThemeMode : LightThemeMode}>
-                <DashboardScreen />
-      <StatusBar style="dark" hidden/>
+        <Main />
+        <StatusBar style="dark" hidden />
       </NavigationContainer>
 
     </SafeAreaProvider>

@@ -8,8 +8,18 @@ import FinchImage from "../../base/FinchImage/FinchImage";
 import { images } from "../../../assets";
 import Feather from "@expo/vector-icons/Feather";
 import FinchButton from "../../base/FinchButton/FinchButton";
+import { StackActions, useNavigation } from "@react-navigation/native";
+import { ESCREEN_NAME } from "../../types/screenName";
 
 const Login = () => {
+  const navigation = useNavigation()
+
+  const navigateToDashboard = () => {
+    // navigation.dispatch(
+    //   StackActions.replace(ESCREEN_NAME.DASHBOARD_SCREEN)
+    // )
+  }
+
   const leftIcon = () => {
     return <Fontisto name="email" size={20} color={color.pale_gray} />;
   };
@@ -65,11 +75,7 @@ const Login = () => {
             textColorType={color.slightly_blue}
           />
         </View>
-
-        {/* <View style={{top: '10%', flex: 1, backgroundColor: 'red'}}> */}
-        
-        <FinchButton buttonCta="Log In" buttonTextColor='red' isGradient />
-        {/* </View> */}
+        <FinchButton onPress={navigateToDashboard} buttonCta="Log In" buttonTextColor='red' isGradient />
       </View>
     </View>
   );
