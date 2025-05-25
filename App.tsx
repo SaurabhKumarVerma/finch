@@ -1,12 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, useColorScheme, View } from 'react-native';
+import { StyleSheet, useColorScheme } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback, useEffect, useState } from 'react';
-import { Image } from 'expo-image';
-import { images } from './assets';
-import LoginScreen from './src/screen/LoginScreen/LoginScreen';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { DarkThemeMode, LightThemeMode } from './src/utils/darkModeConfig';
 import DashboardScreen from './src/screen/DashboardScreen/DashboardScreen';
 SplashScreen.preventAutoHideAsync();
