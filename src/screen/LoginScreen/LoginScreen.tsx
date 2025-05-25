@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet, Text, View } from 'react-native'
+import { ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Login from '../../component/Login/Login'
 import { images } from '../../../assets'
@@ -10,7 +10,9 @@ const LoginScreen = () => {
     const inset = useSafeAreaInsets()
   return (
     <ImageBackground  style={[styles.backgroundImg, {paddingTop: inset.top}]} source={images.loginBackground}>
-      <Login />
+     <ScrollView contentContainerStyle={{flex: 1}}>
+       <Login />
+     </ScrollView>
     </ImageBackground>
   )
 }

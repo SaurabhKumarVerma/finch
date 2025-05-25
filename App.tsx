@@ -7,6 +7,7 @@ import { images } from './assets';
 import LoginScreen from './src/screen/LoginScreen/LoginScreen';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
+import { DarkThemeMode, LightThemeMode } from './src/utils/darkModeConfig';
 SplashScreen.preventAutoHideAsync();
 
 SplashScreen.setOptions({
@@ -45,8 +46,7 @@ export default function App() {
 
   return (
     <SafeAreaProvider style={styles.container} onLayout={onLayoutRootView}>
-      {/* <Image source={images.loginBackground} style={{width: 100, height: 100}}/> */}
-      <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <NavigationContainer theme={scheme === 'dark' ? DarkThemeMode : LightThemeMode}>
                 <LoginScreen />
       <StatusBar style="dark" hidden/>
       </NavigationContainer>
