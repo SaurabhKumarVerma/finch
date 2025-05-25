@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "170100705451",
+    "project_id": "finch-fec9f",
+    "storage_bucket": "finch-fec9f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170100705451:android:a46d12adf6fcfa35e20fee",
+        "android_client_info": {
+          "package_name": "com.saurabh7071.finch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "170100705451-9aclk3hin3u0k3f0phqf0ob9o90i164c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0SCsGb6q6KaPx5zVOrncyQ1hoLIMfwZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "170100705451-9aclk3hin3u0k3f0phqf0ob9o90i164c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "170100705451-mvgpk6m1onu5ti6oh83uh6tebvfspccj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.saurabh7071.finch"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
