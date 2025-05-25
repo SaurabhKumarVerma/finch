@@ -1,10 +1,13 @@
 import {
+    ButtonProps,
     Pressable,
     PressableProps,
     StyleProp,
     StyleSheet,
     TextStyle,
     View,
+    ViewProps,
+    ViewStyle,
 } from "react-native";
 import React from "react";
 import FinchText from "../FinchText/FinchText";
@@ -16,7 +19,9 @@ interface IFinchButton extends PressableProps {
     buttonCtaStyle?: StyleProp<TextStyle>;
     isGradient?: boolean;
     linearColor?: string[];
-    buttonTextColor: string;
+    buttonTextColor?: string;
+    buttonBackgroundColor?: string;
+    buttonContainerStyle?: StyleProp<ViewStyle>
 }
 
 const FinchButton = (props: IFinchButton) => {
@@ -26,13 +31,15 @@ const FinchButton = (props: IFinchButton) => {
         isGradient,
         linearColor,
         buttonTextColor,
+        buttonBackgroundColor,
+        buttonContainerStyle,
         ...rest
     } = props;
 
     const renderButton = () => {
         if (isGradient) {
             return (
-                <Pressable {...rest} style={[styles.linearGradientStyle, {backgroundColor: 'red'}]}>
+                <Pressable {...rest} style={[styles.linearGradientStyle, {backgroundColor: 'red'}, buttonContainerStyle]}>
                     <LinearGradient
                         colors={linearColor || color.buttonGradientColor}
                         style={styles.buttonStyle}
@@ -49,12 +56,12 @@ const FinchButton = (props: IFinchButton) => {
             );
         } else {
             return (
-                <View style={[styles.linearGradientStyle]}>
+                <View style={[styles.linearGradientStyle, buttonContainerStyle]}>
                     <Pressable
                         {...rest}
                         style={[
                             styles.buttonStyle,
-                            { borderWidth: 1, borderColor: color.grey },
+                            {  borderColor: color.grey, backgroundColor: buttonBackgroundColor || color.transparent },
                         ]}
                     >
                         <FinchText

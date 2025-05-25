@@ -6,7 +6,7 @@ export const DarkThemeMode:ReactNavigation.Theme = {
         primary: color.primary,
         background: color.background,
         card: "",
-        text: color.grey,
+        text: color.white,
         border: color.pale_gray,
         notification: color.pale_gray
     },
@@ -36,7 +36,7 @@ export const LightThemeMode:ReactNavigation.Theme = {
         primary: color.primary,
         background: color.background,
         card: "",
-        text: color.grey,
+        text: color.black,
         border: color.pale_gray,
         notification: color.pale_gray
     },
